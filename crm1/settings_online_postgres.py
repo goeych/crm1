@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,8 +79,13 @@ WSGI_APPLICATION = 'crm1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Demo_Test',
+        'USER':'postgres',
+        'PASSWORD':'Goey1234@1',
+        'HOST':'localhost',
+        'PORT':'5432',
+
     }
 }
 
@@ -144,3 +150,5 @@ EMAIL_HOST_PASSWORD = 'letcjpothuwtwapf'
 #EMAIL_HOST_PASSWORD = 'hvbeqgfwdsymgpxj'
 
 CSRF_TRUSTED_ORIGINS=['https://django-crm1.azurewebsites.net']
+
+
