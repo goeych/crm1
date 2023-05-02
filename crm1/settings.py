@@ -149,4 +149,6 @@ EMAIL_HOST_PASSWORD = 'letcjpothuwtwapf'
 #EMAIL_HOST_USER = 'goeych@gmail.com'
 #EMAIL_HOST_PASSWORD = 'hvbeqgfwdsymgpxj'
 
+CSRF_TRUSTED_ORIGINS=[‘https://django-crm1.azurewebsites.net’]
+
 
