@@ -155,7 +155,7 @@ def createOrder(request,pk):
 
     return render(request,'accounts/order_form.html',context)
 
-@login_required(login_url='login_page')
+@login_required(login_url='accounts:login_page')
 @allowed_users(allowed_roles=['admin'])
 def updateOrder(request,pk):
     order =Order.objects.get(id=pk)
@@ -172,7 +172,7 @@ def updateOrder(request,pk):
 
     return render(request,'accounts/update_form.html',context)
 
-@login_required(login_url='login_page')
+@login_required(login_url='accounts:login_page')
 @allowed_users(allowed_roles=['admin'])
 def deleteOrder(request,pk):
     order =Order.objects.get(id=pk)
