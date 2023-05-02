@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'django-crm1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_46802EC3E9A64990B5F3046347E8995B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2FC1C9470D804447A113CFAB9AF3205C }}
