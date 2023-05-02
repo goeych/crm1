@@ -1,0 +1,32 @@
+{% extends 'accounts/main.html'%}
+
+{% block content %}
+    {% include 'accounts/status.html' %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-bordered table-striped table-hover table-sm">
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Date Order</th>
+                    <th>Status</th>
+
+                </tr>
+
+                {% for customer_orderset in customer_ordersets %}
+                <tr>
+                    <th>{{customer_orderset.product}}</th>
+                    <th>{{customer_orderset.product.category}}</th>
+                    <th>{{customer_orderset.date_created}}</th>
+                    <th>{{customer_orderset.status}}</th>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

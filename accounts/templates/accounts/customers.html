@@ -1,0 +1,77 @@
+{% extends 'accounts/main.html'%}
+
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md">
+        <h5>Customer</h5>
+        <hr>
+        <a class="btn btn-outline-info btn-sm btn-block" href="#">Update Customer</a>
+        <a class="btn btn-outline-info btn-sm btn-block" href="{% url 'create_order' customer.id %}">Place Order Customer</a>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+        <hr>
+        <p>Email: {{customer.email}}</p>
+        <p>Phone: {{customer.phone}}</p>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+        <h5>Total Orders</h5>
+        <hr>
+        <h1 style="text-align:center;padding:10px;">{{customer_ordersets_count}}</h1>
+        </div>
+    </div>
+    
+</div>
+
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-bod">
+            <form method="get">
+                {{myFilter.form}}
+
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-bordered table-striped table-hover table-sm">
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Date Order</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+
+                {% for customer_orderset in customer_ordersets %}
+                <tr>
+                    <th>{{customer_orderset.product}}</th>
+                    <th>{{customer_orderset.product.category}}</th>
+                    <th>{{customer_orderset.date_created}}</th>
+                    <th>{{customer_orderset.status}}</th>
+                    <th><a href="{% url 'update_order' customer_orderset.id %}" class="btn btn-sm btn-info">Update</a></th>
+                    <th><a href="{% url 'delete_order' customer_orderset.id %}" class="btn btn-sm btn-danger">Delete</a></th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
