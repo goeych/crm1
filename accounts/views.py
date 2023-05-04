@@ -23,10 +23,10 @@ def registerPage(request):
             user = form.save()
             username = form.cleaned_data.get('username')
 
-            #--Signals.py--
-            #group = Group.objects.get(name='customer')
-            #user.groups.add(group)
-            #Customer.objects.create(user=user)
+            
+            group = Group.objects.get(name='customer')
+            user.groups.add(group)
+            Customer.objects.create(user=user)
             #print("user:",user)
             
             messages.success(request,'Account was created for ' + username)
