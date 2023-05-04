@@ -1,6 +1,8 @@
 {% extends 'accounts/main.html'%}
 {% block content %}
 
+
+
 <div class="row">
     <div class="col-md">
         <div class="card card-body">
@@ -21,6 +23,24 @@
                 {% endfor %}
             </table>
         </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <a href="{% url 'createproduct' %}" style="text-align:center">Add Products</a>
+
+            <form method="POST" action =".">
+                {%csrf_token%}
+                {{form.as_p}}
+
+                <input class="btn btn-primary" type="submit" name="Submit" />
+
+                
+            </form>
+        </div> 
     </div>
 
 </div>
